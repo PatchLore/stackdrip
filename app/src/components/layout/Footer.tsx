@@ -2,11 +2,6 @@ import { Link } from 'react-router-dom';
 import { Zap, Mail, Linkedin, Github } from 'lucide-react';
 
 const footerLinks = {
-  services: [
-    { name: 'API Sprint', href: '/sprint' },
-    { name: 'Account Intel', href: '/intel' },
-    { name: 'Cost Audit', href: '/audit' },
-  ],
   company: [
     { name: 'Process', href: '/#process' },
     { name: 'About', href: '/#about' },
@@ -34,10 +29,7 @@ export function Footer() {
                 Stack<span className="text-cyan-400">Drip</span>
               </span>
             </Link>
-            <p className="text-slate-400 text-sm max-w-sm mb-6">
-              Senior backend engineer with 20 years in sales. Building the 
-              automations and intelligence that move money today—not in six months.
-            </p>
+            {/* Tagline removed as requested */}
             <div className="flex items-center gap-4">
               <a
                 href="mailto:support@stackdrip.dev"
@@ -62,23 +54,6 @@ export function Footer() {
                 <Github className="w-5 h-5" />
               </a>
             </div>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold text-slate-100 mb-4">Services</h3>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Company */}
