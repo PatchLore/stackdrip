@@ -1,18 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Zap, Mail, Linkedin, Github } from 'lucide-react';
 
-const footerLinks = {
-  company: [
-    { name: 'Process', href: '/#process' },
-    { name: 'About', href: '/#about' },
-    { name: 'FAQ', href: '/#faq' },
-  ],
-  legal: [
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
-  ],
-};
-
 export function Footer() {
   return (
     <footer className="bg-slate-950 border-t border-cyan-500/10">
@@ -56,38 +44,47 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Company */}
-          <div>
-            <h3 className="font-semibold text-slate-100 mb-4">Company</h3>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="lg:col-span-3">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div>
+                <h4 className="font-bold mb-4 text-slate-100">StackDrip</h4>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    <Link to="/process" className="text-slate-400 hover:text-cyan-400">Process</Link>
+                  </li>
+                  <li>
+                    <Link to="/about" className="text-slate-400 hover:text-cyan-400">About</Link>
+                  </li>
+                  <li>
+                    <Link to="/faq" className="text-slate-400 hover:text-cyan-400">FAQ</Link>
+                  </li>
+                </ul>
+              </div>
 
-          {/* Legal */}
-          <div>
-            <h3 className="font-semibold text-slate-100 mb-4">Legal</h3>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+              <div>
+                <h4 className="font-bold mb-4 text-slate-100">Legal</h4>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    <Link to="/terms" className="text-slate-400 hover:text-cyan-400">Terms</Link>
+                  </li>
+                  <li>
+                    <Link to="/privacy" className="text-slate-400 hover:text-cyan-400">Privacy</Link>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold mb-4 text-slate-100">Contact</h4>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    <a href="mailto:support@stackdrip.dev" className="text-slate-400 hover:text-cyan-400">support@stackdrip.dev</a>
+                  </li>
+                  <li>
+                    <a href="https://microns.io" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400">Microns.io</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
