@@ -21,7 +21,7 @@ export default function TermsPage() {
         
         <section>
           <h2 className="font-bold mb-2">Payment</h2>
-          <p>Payment via Stripe Connect or bank transfer. Transfer begins after payment clears. No refunds once repository access is granted.</p>
+          <p>All sales conducted through Microns.io marketplace. Their secure payment processing handles escrow and release of funds. Transfer begins after Microns confirms payment clearance. No refunds once repository access is granted.</p>
         </section>
         
         <section>
