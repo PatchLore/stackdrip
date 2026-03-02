@@ -179,14 +179,14 @@ export function HeroSection() {
                   className="bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-semibold group"
                   asChild
                 >
-                  <a
-                    href="mailto:acquisitions@stackdrip.dev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Contact: acquisitions@stackdrip.dev
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                <a
+                  href="mailto:support@stackdrip.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Contact: support@stackdrip.dev
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
                 </Button>
                 <Button
                   size="lg"

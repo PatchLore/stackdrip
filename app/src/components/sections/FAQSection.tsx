@@ -10,7 +10,7 @@ import {
 const faqs = [
   {
     question: 'How is this different from buying a template?',
-    answer: `Templates are static. These are production apps—working auth, working Stripe, working databases. You get the repo, the deployment config, and 48h of support to get it live.`,
+    answer: `Templates are static. These are production apps—working auth, working Stripe, working databases. You get the repo, the deployment config, and email support during the 7-day handoff to get it live.`,
   },
   {
     question: 'What if it breaks?',
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: 'What if I need changes after delivery?',
-    answer: `You get 48h of technical Q&A via Slack. Want custom dev? That's a separate conversation, but these apps are built to be forked easily.`,
+    answer: `You get email support during the 7-day handoff. Bug fixes guaranteed. Want custom dev? That's a separate conversation, but these apps are built to be forked easily.`,
   },
   {
     question: 'Do the apps have revenue?',

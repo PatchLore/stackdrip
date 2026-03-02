@@ -40,7 +40,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="mailto:acquisitions@stackdrip.dev"
+                href="mailto:support@stackdrip.dev"
                 className="p-2 rounded-lg bg-slate-900 text-slate-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors"
               >
                 <Mail className="w-5 h-5" />

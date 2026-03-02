@@ -42,7 +42,7 @@ export function AboutSection() {
             <div className="grid grid-cols-3 gap-6 mt-8">
               {[
                 { value: '5 Apps', label: 'For Sale', color: 'cyan' },
-                { value: '£10k+', label: 'Total Value', color: 'amber' },
+                { value: '£5k+', label: 'Inventory Value', color: 'amber' },
                 { value: '48h', label: 'Average Build', color: 'green' },
               ].map((stat, index) => (
                 <motion.div

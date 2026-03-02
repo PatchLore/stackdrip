@@ -1,4 +1,4 @@
-import { Eye, MessageCircle, Rocket, Slack, CheckCircle2 } from 'lucide-react';
+import { Eye, MessageCircle, Rocket, Mail, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const steps = [
@@ -13,7 +13,7 @@ const steps = [
       number: '02',
       icon: MessageCircle,
       title: 'Make Offer',
-      description: 'DM via Microns.io or email acquisitions@stackdrip.dev. Fast responses—no brokers, no middlemen.',
+      description: 'DM via Microns.io or email support@stackdrip.dev. Fast responses—no brokers, no middlemen.',
       duration: 'Same day',
     },
   {
@@ -25,9 +25,10 @@ const steps = [
   },
   {
     number: '04',
-    icon: Slack,
+    icon: Mail,
     title: 'Launch Support',
-    description: '48h of technical Q&A via Slack. Optional: 30-day maintenance retainer for non-technical buyers.',
+    description:
+      'Email support during 7-day handoff. Bug fixes guaranteed. No ongoing maintenance.',
     duration: 'Ongoing',
   },
 ];

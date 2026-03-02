@@ -14,8 +14,8 @@ const credentials = [
   },
   {
     icon: Shield,
-    title: '£10k+',
-    subtitle: 'Total Value',
+    title: '£5k+',
+    subtitle: 'Inventory Value',
   },
 ];
 
