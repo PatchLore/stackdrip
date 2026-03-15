@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutPage';
 import FAQPage from './pages/FAQPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
+import ProcessPage from './pages/ProcessPage';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="faq" element={<FAQPage />} />
           <Route path="terms" element={<TermsPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
+          <Route path="process" element={<ProcessPage />} />
         </Route>
 
         {/* Catch-all 404 for removed service routes and other unknown paths */}
