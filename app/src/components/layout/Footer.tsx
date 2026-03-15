@@ -80,7 +80,7 @@ export function Footer() {
                     <a href="mailto:support@stackdrip.dev" className="text-slate-400 hover:text-cyan-400">support@stackdrip.dev</a>
                   </li>
                   <li>
-                    <a href="https://microns.io" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400">Microns.io</a>
+                    <a href="https://whop.com/stackdrip" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400">Whop</a>
                   </li>
                 </ul>
               </div>

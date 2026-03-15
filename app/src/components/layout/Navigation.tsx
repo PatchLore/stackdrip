@@ -88,11 +88,11 @@ export function Navigation() {
               className="bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-semibold"
             >
               <a
-                href="https://microns.io"
+                href="https://whop.com/stackdrip"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View Inventory
+                View Tools
               </a>
             </Button>
           </div>
@@ -132,11 +132,11 @@ export function Navigation() {
               className="w-full bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-semibold mt-4"
             >
               <a
-                href="https://microns.io"
+                href="https://whop.com/stackdrip"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View Inventory
+                View Tools
               </a>
             </Button>
           </div>
