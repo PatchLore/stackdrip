@@ -5,31 +5,30 @@ const steps = [
   {
     number: '01',
     icon: Eye,
-    title: 'Browse Inventory',
-    description: 'Review live demos, tech stacks, and pricing. Everything is pre-revenue, production-tested, and documented.',
+    title: 'Browse Tools',
+    description: 'Review live demos, tech notes, and sample outputs. Lightweight docs included.',
     duration: '5 minutes',
   },
-    {
-      number: '02',
-      icon: MessageCircle,
-      title: 'Make Offer',
-      description: 'DM via Microns.io or email support@stackdrip.dev. Fast responses—no brokers, no middlemen.',
-      duration: 'Same day',
-    },
+  {
+    number: '02',
+    icon: MessageCircle,
+    title: 'Try Demo',
+    description: 'Run an interactive demo or request sample outputs to verify fit.',
+    duration: 'Same day',
+  },
   {
     number: '03',
     icon: Rocket,
-    title: 'Secure Transfer',
-    description: 'GitHub repo transfer + Vercel deployment keys + database dumps. Stripe Connect for payment protection.',
+    title: 'Purchase',
+    description: 'Buy access (Aura Studio distributed via Whop). Access and deployment docs provided after purchase.',
     duration: '24 hours',
   },
   {
     number: '04',
     icon: Mail,
-    title: 'Launch Support',
-    description:
-      'Email support during 7-day handoff. Bug fixes guaranteed. No ongoing maintenance.',
-    duration: 'Ongoing',
+    title: 'Support',
+    description: 'Email support for 7 days. Bug fixes guaranteed. No ongoing maintenance.',
+    duration: '7 days',
   },
 ];
 
@@ -73,10 +72,10 @@ export function ProcessSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-100 mb-4">
-            How <span className="text-gradient-cyan">Acquisition</span> Works
+            How <span className="text-gradient-cyan">We Build & Ship</span>
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            No equity negotiations. No due diligence delays. Just working codebases with clean handoffs.
+            Small, experimental AI products — iterated quickly and shipped to creators.
           </p>
         </motion.div>
 

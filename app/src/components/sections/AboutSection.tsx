@@ -19,22 +19,19 @@ export function AboutSection() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-100 mb-6">
-              Solo Backend Engineer Shipping{' '}
-              <span className="text-gradient-cyan">Production-Ready</span> MVPs
+              Indie software studio building{' '}
+              <span className="text-gradient-cyan">AI tools</span> for creators
             </h2>
 
             <div className="space-y-4 text-slate-400 leading-relaxed">
               <p>
-                I'm a solo backend engineer shipping production-ready MVPs in 48-hour sprints. Six months ago I started validating multiple verticals simultaneously—now I'm doubling down on AI Cost Explainer (agency) and offloading the rest to operators who can actually market them.
+                We're a small studio focused on experimental AI products for creators, indie hackers, and online businesses. We ship fast, iterate on feedback, and keep things simple.
               </p>
               <p>
-                What I build: Next.js 14 apps with working Stripe checkouts, Supabase schemas, and Docker configs. No placeholders. No &ldquo;coming soon&rdquo; pages. These are production repos that need distribution, not coding.
+                Our tools prioritize creator workflows: quick outputs, opinionated presets, and predictable integrations. Minimal setup, maximum creativity.
               </p>
               <p className="text-slate-300 font-medium">
-                Why I'm selling: I validate fast. You scale faster. I'd rather take a clean exit and fund the next build than let these sit while I focus on service revenue.
-              </p>
-              <p className="text-slate-300 font-medium">
-                Based in UK. Shipping since 2024.
+                Based in the UK. Building since 2024.
               </p>
             </div>
 
@@ -72,19 +69,17 @@ export function AboutSection() {
             className="relative"
           >
             <div className="relative glass-card rounded-2xl p-8">
-              {/* Tech stack */}
+              {/* How we build */}
               <div className="mt-8 pt-8 border-t border-slate-800">
                 <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">
-                  Tech Stack
+                  How We Build
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    'Next.js 14',
-                    'Tailwind',
-                    'PostgreSQL',
+                    'Next.js',
                     'Supabase',
-                    'Stripe',
                     'OpenAI',
+                    'Replicate',
                     'Vercel',
                   ].map((skill) => (
                     <span

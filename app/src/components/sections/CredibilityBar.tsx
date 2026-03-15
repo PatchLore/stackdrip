@@ -9,13 +9,13 @@ const credentials = [
   },
   {
     icon: Award,
-    title: '5 Apps',
-    subtitle: 'For Sale',
+    title: '3 Tools',
+    subtitle: 'Available',
   },
   {
     icon: Shield,
-    title: '£5k+',
-    subtitle: 'Inventory Value',
+    title: 'Early Access',
+    subtitle: 'Limited spots',
   },
 ];
 

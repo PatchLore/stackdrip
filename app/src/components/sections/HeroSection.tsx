@@ -164,13 +164,11 @@ export function HeroSection() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-                <span className="text-slate-100">Micro-SaaS</span>
-                <br />
-                <span className="text-gradient-cyan">Foundry</span>
+                StackDrip — AI Tools for Creators & Builders
               </h1>
 
               <p className="text-lg text-slate-400 max-w-lg mb-8">
-                Production-ready apps. Modern stacks. Zero marketing fluff.
+                Experimental AI software designed for content creators, indie hackers, and internet businesses.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -179,14 +177,9 @@ export function HeroSection() {
                   className="bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-semibold group"
                   asChild
                 >
-                <a
-                  href="mailto:support@stackdrip.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Contact: support@stackdrip.dev
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                  <a href="#tools">Explore Tools
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
                 </Button>
                 <Button
                   size="lg"
@@ -194,7 +187,7 @@ export function HeroSection() {
                   className="border-slate-700 text-slate-300 hover:bg-slate-800"
                   asChild
                 >
-                  <a href="#inventory">View Inventory</a>
+                  <a href="https://x.com/stack_drip" target="_blank" rel="noopener noreferrer">Follow on X</a>
                 </Button>
               </div>
 
@@ -232,14 +225,12 @@ export function HeroSection() {
 
               {/* The Stack */}
               <div className="mt-8 p-6 bg-slate-900/50 rounded-xl border border-slate-700">
-                <h3 className="text-sm font-semibold text-cyan-400 mb-4">THE STACK</h3>
+                <h3 className="text-sm font-semibold text-cyan-400 mb-4">How We Build</h3>
                 <div className="flex flex-wrap gap-2 text-slate-300">
-                  <span className="px-2 py-1 bg-slate-800 rounded text-sm">Next.js 14</span>
-                  <span className="px-2 py-1 bg-slate-800 rounded text-sm">Tailwind</span>
-                  <span className="px-2 py-1 bg-slate-800 rounded text-sm">PostgreSQL</span>
+                  <span className="px-2 py-1 bg-slate-800 rounded text-sm">Next.js</span>
                   <span className="px-2 py-1 bg-slate-800 rounded text-sm">Supabase</span>
-                  <span className="px-2 py-1 bg-slate-800 rounded text-sm">Stripe</span>
                   <span className="px-2 py-1 bg-slate-800 rounded text-sm">OpenAI</span>
+                  <span className="px-2 py-1 bg-slate-800 rounded text-sm">Replicate</span>
                   <span className="px-2 py-1 bg-slate-800 rounded text-sm">Vercel</span>
                 </div>
               </div>
@@ -253,104 +244,28 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            {/* Sales Chart Decoration */}
+            {/* Featured Product */}
             <div className="relative">
               <div className="glass-card rounded-2xl p-6 lg:p-8">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold text-slate-100">Revenue Growth</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-green-400 text-sm">
-                    <Zap className="w-4 h-4" />
-                    <span>+147%</span>
-                  </div>
-                </div>
+                <h3 className="text-lg font-bold text-slate-100 mb-2">🖤 Aura Studio — AI Creative Engine</h3>
+                <p className="text-slate-400 mb-4">Aura Studio is an AI tool for creators that generates unique art styles and character blends.</p>
 
-                {/* Chart */}
-                <div className="relative h-48 mb-6">
-                  <svg className="w-full h-full" viewBox="0 0 400 150" preserveAspectRatio="none">
-                    {/* Grid lines */}
-                    {[0, 1, 2, 3, 4].map((i) => (
-                      <line
-                        key={i}
-                        x1="0"
-                        y1={30 * i}
-                        x2="400"
-                        y2={30 * i}
-                        stroke="rgba(148, 163, 184, 0.1)"
-                        strokeWidth="1"
-                      />
-                    ))}
-                    
-                    {/* Area fill */}
-                    <defs>
-                      <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.3" />
-                        <stop offset="100%" stopColor="#22d3ee" stopOpacity="0" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M0,120 Q50,110 100,90 T200,60 T300,40 T400,20 L400,150 L0,150 Z"
-                      fill="url(#chartGradient)"
-                    />
-                    
-                    {/* Line */}
-                    <path
-                      d="M0,120 Q50,110 100,90 T200,60 T300,40 T400,20"
-                      fill="none"
-                      stroke="#22d3ee"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                    />
-                    
-                    {/* Data points */}
-                    {[
-                      [0, 120],
-                      [100, 90],
-                      [200, 60],
-                      [300, 40],
-                      [400, 20],
-                    ].map(([x, y], i) => (
-                      <circle
-                        key={i}
-                        cx={x}
-                        cy={y}
-                        r="5"
-                        fill="#0f172a"
-                        stroke="#22d3ee"
-                        strokeWidth="2"
-                      />
-                    ))}
-                  </svg>
-                </div>
+                <ul className="text-sm text-slate-300 space-y-1 mb-4">
+                  <li>• Art Mode — 12 presets including Cyberpunk, Anime, Studio Ghibli</li>
+                  <li>• Blend Mode — combine characters and styles</li>
+                  <li>• Fast image generation</li>
+                  <li>• Creator-friendly workflow</li>
+                </ul>
 
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-4">
-                  {[
-                    { label: 'Pipeline', value: '2.4x', color: 'cyan' },
-                    { label: 'Conversion', value: '+38%', color: 'amber' },
-                    { label: 'Time Saved', value: '20h/wk', color: 'green' },
-                  ].map((stat) => (
-                    <div key={stat.label} className="text-center">
-                      <p className={`text-2xl font-bold text-${stat.color}-400`}>
-                        {stat.value}
-                      </p>
-                      <p className="text-xs text-slate-500">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Floating badge */}
-              <div className="absolute -bottom-4 -right-4 glass-card rounded-xl p-4 border-amber-500/20">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-amber-400" />
-                  </div>
+                <div className="flex items-center justify-between mt-6">
                   <div>
-                    <p className="text-sm font-semibold text-slate-100">48h</p>
-                    <p className="text-xs text-slate-500">Sprint Cycle</p>
+                    <p className="text-sm text-slate-400">Early Access</p>
+                    <p className="text-lg font-bold text-slate-100">$29 — first 50 users</p>
+                    <p className="text-xs text-slate-500">Then $49 · Buy once. Updates included.</p>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <a href="https://whop.com" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-amber-500 text-slate-950 rounded font-semibold">Buy on Whop</a>
+                    <a href="#tools" className="px-4 py-2 border border-slate-700 text-slate-300 rounded text-sm">View Tools</a>
                   </div>
                 </div>
               </div>

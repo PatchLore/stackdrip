@@ -21,7 +21,7 @@ export default function TermsPage() {
         
         <section>
           <h2 className="font-bold mb-2">Payment</h2>
-          <p>All sales conducted through Microns.io marketplace. Their secure payment processing handles escrow and release of funds. Transfer begins after Microns confirms payment clearance. No refunds once repository access is granted.</p>
+          <p>Payments are processed via third-party payment providers. Transfer or access begins after payment confirmation. No refunds once access is granted.</p>
         </section>
         
         <section>
