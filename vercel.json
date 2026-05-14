@@ -1,8 +1,5 @@
 {
-  "buildCommand": "cd app && NEXT_TURBOPACK=0 npm run build",
+  "buildCommand": "cd app && npm run build",
   "outputDirectory": "app/.next",
-  "installCommand": "cd app && npm install",
-  "env": {
-    "NEXT_TURBOPACK": "0"
-  }
+  "installCommand": "cd app && npm install"
 }
