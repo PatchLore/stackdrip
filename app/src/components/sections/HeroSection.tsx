@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ArrowRight, Code2, TrendingUp, Zap } from 'lucide-react';
+import { ArrowRight, Code2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
@@ -164,7 +164,7 @@ export function HeroSection() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-                StackDrip — AI Tools for Creators & Builders
+                StackDrip, AI Tools for Creators & Builders
               </h1>
 
               <p className="text-lg text-slate-400 max-w-lg mb-8">
@@ -219,7 +219,7 @@ export function HeroSection() {
               {/* Description */}
               <div className="mt-8 p-6 bg-slate-900/50 rounded-xl border border-slate-700">
                 <p className="text-slate-300 leading-relaxed">
-                  I'm a solo backend engineer shipping production-ready MVPs in 48-hour sprints. Six months ago I started validating multiple verticals simultaneously—now I'm doubling down on AI Cost Explainer (agency) and offloading the rest to operators who can actually market them.
+                  I'm a solo backend engineer shipping production-ready MVPs in 48-hour sprints. Six months ago I started validating multiple verticals simultaneously, now I'm doubling down on AI Cost Explainer (agency) and offloading the rest to operators who can actually market them.
                 </p>
               </div>
 
@@ -247,11 +247,11 @@ export function HeroSection() {
             {/* Featured Product */}
             <div className="relative">
               <div className="glass-card rounded-2xl p-6 lg:p-8">
-                <h3 className="text-lg font-bold text-slate-100 mb-2">🖤 Aura Studio — AI Creative Engine</h3>
+                <h3 className="text-lg font-bold text-slate-100 mb-2">🖤 Aura Studio, AI Creative Engine</h3>
                 <p className="text-slate-400 mb-4">Aura Studio is an AI tool for creators that generates unique art styles and character blends.</p>
 
                 <ul className="text-sm text-slate-300 space-y-1 mb-4">
-                  <li>• Art Mode — 12 presets including Cyberpunk, Anime, Studio Ghibli</li>
+                  <li>• Art Mode, 12 presets including Cyberpunk, Anime, Studio Ghibli</li>
                   <li>• Blend Mode — combine characters and styles</li>
                   <li>• Fast image generation</li>
                   <li>• Creator-friendly workflow</li>
@@ -260,7 +260,7 @@ export function HeroSection() {
                 <div className="flex items-center justify-between mt-6">
                   <div>
                     <p className="text-sm text-slate-400">Early Access</p>
-                    <p className="text-lg font-bold text-slate-100">$29 — first 50 users</p>
+                    <p className="text-lg font-bold text-slate-100">$29, first 50 users</p>
                     <p className="text-xs text-slate-500">Then $49 · Buy once. Updates included.</p>
                   </div>
                   <div className="flex flex-col gap-2">

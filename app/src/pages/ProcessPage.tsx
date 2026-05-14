@@ -17,7 +17,7 @@ export default function ProcessPage() {
       <section className="mb-8">
         <h2 className="font-semibold text-lg mb-2">2. Rapid Prototyping</h2>
         <p className="text-slate-400">
-          Tools are quickly prototyped using modern frameworks and AI-assisted development. The goal is to ship functional versions fast — enough to validate the idea with real users and iterate.
+          Tools are quickly prototyped using modern frameworks and AI-assisted development. The goal is to ship functional versions fast, enough to validate the idea with real users and iterate.
         </p>
       </section>
 
@@ -31,7 +31,7 @@ export default function ProcessPage() {
       <section className="mb-8">
         <h2 className="font-semibold text-lg mb-2">4. Iteration</h2>
         <p className="text-slate-400">
-          Tools evolve continuously — new features, UX improvements, and integrations are added based on usage and user requests. We prefer small, frequent releases over large infrequent updates.
+          Tools evolve continuously, new features, UX improvements, and integrations are added based on usage and user requests. We prefer small, frequent releases over large infrequent updates.
         </p>
       </section>
 
@@ -40,7 +40,7 @@ export default function ProcessPage() {
         <div className="grid sm:grid-cols-2 gap-6 mt-4">
           <div>
             <h3 className="font-medium">Creator Tools</h3>
-            <p className="text-slate-400 mt-2">Tools focused on content, art, and creator workflows — quick outputs, presets, and creative controls.</p>
+            <p className="text-slate-400 mt-2">Tools focused on content, art, and creator workflows, quick outputs, presets, and creative controls.</p>
           </div>
           <div>
             <h3 className="font-medium">Builder / B2B Tools</h3>
@@ -52,9 +52,9 @@ export default function ProcessPage() {
       <section>
         <h2 className="font-semibold text-lg mb-4">6. Current Projects</h2>
         <ul className="list-disc list-inside text-slate-400 space-y-2">
-          <li>Aura Studio — AI Creative Engine for unique art styles and character blends</li>
-          <li>LeakScanner — Automated scans for leaked API keys and secrets</li>
-          <li>AI Cost Explainer — Visualize and explain AI tool spending with actionable insights</li>
+          <li>Aura Studio, AI Creative Engine for unique art styles and character blends</li>
+          <li>LeakScanner, Automated scans for leaked API keys and secrets</li>
+          <li>AI Cost Explainer, Visualize and explain AI tool spending with actionable insights</li>
         </ul>
       </section>
     </div>

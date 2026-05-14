@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 const navLinks = [
   { name: 'Process', href: '/#process' },
   { name: 'About', href: '/#about' },
+  { name: 'SpotBid', href: '/spotbid' },
 ];
 
 export function Navigation() {
@@ -67,8 +68,10 @@ export function Navigation() {
                 key={link.name}
                 to={link.href}
                 onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(link.href);
+                  if (link.href.startsWith('/#')) {
+                    e.preventDefault();
+                    scrollToSection(link.href);
+                  }
                 }}
                 className={`text-sm font-medium transition-colors ${
                   isActive(link.href)
@@ -117,8 +120,11 @@ export function Navigation() {
                   key={link.name}
                   to={link.href}
                   onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(link.href);
+                    if (link.href.startsWith('/#')) {
+                      e.preventDefault();
+                      scrollToSection(link.href);
+                    }
+                    setIsMobileMenuOpen(false);
                   }}
                   className="block py-2 text-slate-300 hover:text-cyan-400 transition-colors"
                 >

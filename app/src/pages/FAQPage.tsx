@@ -2,7 +2,7 @@ export default function FAQPage() {
   const faqs = [
     {
       q: "How is this different from buying a template?",
-      a: "Templates are static. These are production apps—working auth, working Stripe, working databases. You get the repo, the deployment config, and 7 days of support to get it live."
+      a: "Templates are static. These are production apps, working auth, working Stripe, working databases. You get the repo, the deployment config, and 7 days of support to get it live."
     },
     {
       q: "What's included in the sale?",

@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
 import { HomePage } from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
+import SpotBidPage from './components/pages/SpotBidPage';
 import FAQPage from './pages/FAQPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
@@ -19,6 +20,7 @@ function App() {
           <Route path="terms" element={<TermsPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
           <Route path="process" element={<ProcessPage />} />
+          <Route path="spotbid" element={<SpotBidPage />} />
         </Route>
 
         {/* Catch-all 404 for removed service routes and other unknown paths */}

@@ -5,7 +5,7 @@ export default function AboutPage() {
       
       <p className="text-lg mb-6">
         I'm a solo backend engineer shipping production-ready MVPs in 48-hour sprints. 
-        Six months ago I started validating multiple verticals simultaneously—now I'm 
+        Six months ago I started validating multiple verticals simultaneously, now I'm 
         doubling down on AI Cost Explainer (agency) and offloading the rest to operators 
         who can actually market them.
       </p>
