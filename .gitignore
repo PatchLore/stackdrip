@@ -1,1 +1,5 @@
 .vercel
+node_modules
+.next
+app/dist
+app/node_modules/.cache
