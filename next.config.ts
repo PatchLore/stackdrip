@@ -5,9 +5,6 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
-  experimental: {
-    serverExternalPackages: ["react-syntax-highlighter"],
-  },
 };
 
 export default nextConfig;
