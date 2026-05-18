@@ -1,5 +1,6 @@
 "use client";
 
+import { useForm, ValidationError } from "@formspree/react";
 import { motion } from "framer-motion";
 import {
   Shield,
@@ -18,6 +19,7 @@ import {
   BookOpen,
   Send,
   CheckCircle2,
+  Loader2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -147,6 +149,72 @@ function TelegramMockup() {
   );
 }
 
+function BookTestForm({
+  className,
+  buttonSize = "lg",
+}: {
+  className?: string;
+  buttonSize?: "default" | "lg";
+}) {
+  const [state, handleSubmit] = useForm("xqejaqkg");
+
+  if (state.succeeded) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="flex items-center gap-2 text-emerald-400 font-medium text-sm sm:text-base"
+      >
+        <CheckCircle2 className="w-5 h-5 shrink-0" />
+        You&apos;re on the list! We&apos;ll be in touch to set up your 48h
+        test. ✔️
+      </motion.div>
+    );
+  }
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className={`flex flex-col sm:flex-row items-center gap-3 ${className || ""}`}
+    >
+      <div className="flex flex-col gap-1 w-full sm:w-auto">
+        <input
+          id="test-email"
+          type="email"
+          name="email"
+          placeholder="Enter your email to book a test"
+          required
+          className="w-full sm:w-64 px-4 py-2.5 rounded-xl bg-white/[0.06] border border-white/[0.1] text-white placeholder:text-zinc-500 text-sm focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all"
+        />
+        <ValidationError
+          prefix="Email"
+          field="email"
+          errors={state.errors}
+          className="text-xs text-red-400 pl-1"
+        />
+      </div>
+      <Button
+        type="submit"
+        size={buttonSize}
+        disabled={state.submitting}
+        className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl px-8 h-12 text-base shadow-xl shadow-emerald-500/20 hover:shadow-emerald-400/30 transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60 disabled:hover:scale-100 disabled:cursor-not-allowed w-full sm:w-auto"
+      >
+        {state.submitting ? (
+          <>
+            <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+            Sending…
+          </>
+        ) : (
+          <>
+            Book Free 48h Test
+            <ArrowRight className="w-4 h-4 ml-1" />
+          </>
+        )}
+      </Button>
+    </form>
+  );
+}
+
 export default function SpotBidPage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -175,20 +243,13 @@ export default function SpotBidPage() {
               Revenue
             </a>
           </div>
-          <Button
-            asChild
-            size="sm"
-            className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-lg shadow-lg shadow-emerald-500/20 hover:shadow-emerald-400/30 transition-all"
+          <a
+            href="#cta"
+            className="inline-flex items-center gap-1.5 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-lg shadow-lg shadow-emerald-500/20 hover:shadow-emerald-400/30 transition-all px-4 py-2 text-sm"
           >
-            <a
-              href="https://twitter.com/messages/compose?recipient_id=1589435889230512128"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get Started
-              <ArrowRight className="w-3.5 h-3.5" />
-            </a>
-          </Button>
+            Get Started
+            <ArrowRight className="w-3.5 h-3.5" />
+          </a>
         </div>
       </nav>
 
@@ -237,25 +298,12 @@ export default function SpotBidPage() {
                 <motion.div
                   variants={fadeUp}
                   custom={3}
-                  className="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
+                  className="mt-8"
                 >
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl px-8 h-12 text-base shadow-xl shadow-emerald-500/20 hover:shadow-emerald-400/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
-                  >
-                    <a
-                      href="https://twitter.com/messages/compose?recipient_id=1589435889230512128"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Book a Free 48-Hour Test
-                      <ArrowRight className="w-4 h-4 ml-1" />
-                    </a>
-                  </Button>
-                  <span className="text-sm text-zinc-500">
+                  <BookTestForm />
+                  <p className="text-sm text-zinc-500 mt-3 text-center lg:text-left">
                     No strings attached
-                  </span>
+                  </p>
                 </motion.div>
 
                 <motion.div
@@ -594,7 +642,7 @@ export default function SpotBidPage() {
         </section>
 
         {/* ───── Final CTA Section ───── */}
-        <section className="py-20 md:py-28">
+        <section id="cta" className="py-20 md:py-28">
           <div className="max-w-6xl mx-auto px-6">
             <motion.div
               initial="hidden"
@@ -623,37 +671,9 @@ export default function SpotBidPage() {
               <motion.div
                 variants={fadeUp}
                 custom={2}
-                className="relative mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center"
+                className="relative mt-8"
               >
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl px-8 h-12 text-base shadow-xl shadow-emerald-500/20 hover:shadow-emerald-400/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  <a
-                    href="https://twitter.com/messages/compose?recipient_id=1589435889230512128"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Book a Free 48-Hour Test
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="border-white/10 hover:border-emerald-500/30 hover:bg-emerald-500/[0.06] text-zinc-300 rounded-xl px-8 h-12 transition-all"
-                >
-                  <a
-                    href="https://twitter.com/messages/compose?recipient_id=1589435889230512128"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    DM Us on Twitter
-                  </a>
-                </Button>
+                <BookTestForm />
               </motion.div>
             </motion.div>
           </div>
