@@ -146,7 +146,7 @@ export default function Home() {
             >
               {/* eBay Profit Guardian Card */}
               <motion.a
-                href="#"
+                href="/ebay-profit-guardian"
                 variants={fadeUp}
                 custom={0}
                 className="group relative p-8 rounded-2xl border border-white/[0.06] bg-[#0c0c0f] hover:border-cyan-500/20 hover:bg-cyan-500/[0.02] transition-all duration-300 block"
