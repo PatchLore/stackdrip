@@ -1,38 +1,77 @@
 export default function PrivacyPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-20 text-sm">
-      <h1 className="text-2xl font-bold mb-8">Privacy Policy</h1>
+    <div className="max-w-3xl mx-auto px-6 py-20">
+      <h1 className="text-3xl font-bold mb-8">
+        eBay Profit Guardian - Privacy Policy
+      </h1>
 
-      <h2 className="font-bold mt-4 mb-2">Overview</h2>
-      <p className="mb-4">
-        StackDrip is a small independent software studio that builds and distributes digital tools and AI-powered applications. This privacy policy applies to the StackDrip website and any data collected through it.
+      <p className="text-sm text-zinc-400 mb-10">
+        <strong className="text-zinc-300">Effective Date:</strong> May 27, 2026
       </p>
 
-      <h2 className="font-bold mt-6 mb-2">Information We Collect</h2>
-      <p className="mb-4">
-        We collect minimal information, which may include:
-      </p>
-      <ul className="list-disc list-inside mb-4">
-        <li>Email address when you contact us</li>
-        <li>Basic purchase information when buying a product through a third-party platform</li>
-        <li>Information voluntarily provided in support requests</li>
-      </ul>
-      <p className="mb-4">We do <strong>not</strong> sell or share personal data with advertisers.</p>
+      <section className="mb-8">
+        <h2 className="text-xl font-bold mb-3">Overview</h2>
+        <p className="text-zinc-300 leading-relaxed">
+          eBay Profit Guardian is a Chrome Extension that calculates seller
+          profit margins on eBay listings. We are committed to protecting your
+          privacy.
+        </p>
+      </section>
 
-      <h2 className="font-bold mt-6 mb-2">Payments</h2>
-      <p className="mb-4">Payments are processed by third-party platforms such as Whop and their payment providers. StackDrip does <strong>not</strong> handle or store credit card information directly.</p>
+      <section className="mb-8">
+        <h2 className="text-xl font-bold mb-3">Data Collection</h2>
+        <p className="text-zinc-300 leading-relaxed mb-3">
+          <strong className="text-zinc-100">eBay Page Data:</strong> When you
+          click the extension on an eBay product page, the extension reads the
+          item title, price, and shipping cost directly from the page&apos;s
+          DOM. This data is used solely to calculate your profit margin and is
+          not transmitted anywhere else.
+        </p>
+        <p className="text-zinc-300 leading-relaxed mb-3">
+          <strong className="text-zinc-100">License Data:</strong> If you
+          upgrade to Pro, your license key is sent securely to our verification
+          server to validate your purchase. We do not store your payment
+          information.
+        </p>
+        <p className="text-zinc-300 leading-relaxed">
+          <strong className="text-zinc-100">No Personal Data:</strong> We do not
+          collect personally identifiable information, browsing history outside
+          of eBay product pages, or sensitive user data.
+        </p>
+      </section>
 
-      <h2 className="font-bold mt-6 mb-2">Product Access</h2>
-      <p className="mb-4">If a product requires account access or login credentials, this data is used solely to provide the service and is not shared with third parties except where required for the functionality of the product.</p>
+      <section className="mb-8">
+        <h2 className="text-xl font-bold mb-3">Data Storage</h2>
+        <p className="text-zinc-300 leading-relaxed">
+          All user data (custom fee rates, sales history records, and Pro
+          activation status) is stored 100% locally on your device using
+          chrome.storage.local. We do not have access to this data, and it is
+          never transmitted to our servers.
+        </p>
+      </section>
 
-      <h2 className="font-bold mt-6 mb-2">Cookies & Analytics</h2>
-      <p className="mb-4">The StackDrip website may use basic cookies or lightweight analytics to improve the website experience. These do not track personal identities.</p>
+      <section className="mb-8">
+        <h2 className="text-xl font-bold mb-3">Third-Party Services</h2>
+        <p className="text-zinc-300 leading-relaxed">
+          We use Gumroad and Stripe for payment processing. These services have
+          their own privacy policies governing the data they collect during
+          checkout.
+        </p>
+      </section>
 
-      <h2 className="font-bold mt-6 mb-2">Data Retention</h2>
-      <p className="mb-4">We only retain personal data for as long as necessary to provide services, respond to support requests, or comply with legal obligations.</p>
-
-      <h2 className="font-bold mt-6 mb-2">Contact</h2>
-      <p>If you have any questions about this privacy policy, you can contact: <a href="mailto:support@stackdrip.dev" className="text-blue-600">support@stackdrip.dev</a></p>
+      <section className="mb-8">
+        <h2 className="text-xl font-bold mb-3">Contact</h2>
+        <p className="text-zinc-300 leading-relaxed">
+          If you have questions about this privacy policy, please contact us via{" "}
+          <a
+            href="https://stackdrip.dev"
+            className="text-emerald-400 hover:text-emerald-300 underline underline-offset-2"
+          >
+            our website
+          </a>
+          .
+        </p>
+      </section>
     </div>
   );
 }
