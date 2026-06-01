@@ -4,12 +4,10 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   Zap,
-  Twitter,
-  Send,
-  BookOpen,
   Gamepad2,
   Bot,
   Code2,
+  Search,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -144,13 +142,45 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
               variants={stagger}
-              className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
             >
+              {/* eBay Profit Guardian Card */}
+              <motion.a
+                href="#"
+                variants={fadeUp}
+                custom={0}
+                className="group relative p-8 rounded-2xl border border-white/[0.06] bg-[#0c0c0f] hover:border-cyan-500/20 hover:bg-cyan-500/[0.02] transition-all duration-300 block"
+              >
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/15 flex items-center justify-center group-hover:bg-cyan-500/15 transition-colors shrink-0">
+                    <Search className="w-6 h-6 text-cyan-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-1">
+                      eBay Profit Guardian
+                    </h3>
+                    <p className="text-sm text-cyan-400 font-medium">
+                      True Profit Calculator for eBay Sellers
+                    </p>
+                  </div>
+                </div>
+                <p className="text-sm text-zinc-500 leading-relaxed mb-6">
+                  Stop guessing if you&apos;re making money. Auto-scrapes fees,
+                  shipping, and processing costs to calculate your exact profit
+                  on any UK or US listing. Pay once, protect your margins
+                  forever.
+                </p>
+                <div className="flex items-center gap-2 text-sm text-zinc-400 group-hover:text-cyan-400 transition-colors">
+                  Learn more
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </motion.a>
+
               {/* SpotBid Card */}
               <motion.a
                 href="/spotbid"
                 variants={fadeUp}
-                custom={0}
+                custom={1}
                 className="group relative p-8 rounded-2xl border border-white/[0.06] bg-[#0c0c0f] hover:border-emerald-500/20 hover:bg-emerald-500/[0.02] transition-all duration-300 block"
               >
                 <div className="flex items-start gap-4 mb-6">
@@ -180,7 +210,7 @@ export default function Home() {
               <motion.a
                 href="/launchqueue"
                 variants={fadeUp}
-                custom={1}
+                custom={2}
                 className="group relative p-8 rounded-2xl border border-white/[0.06] bg-[#0c0c0f] hover:border-purple-500/20 hover:bg-purple-500/[0.02] transition-all duration-300 block"
               >
                 <div className="flex items-start gap-4 mb-6">
@@ -263,49 +293,16 @@ export default function Home() {
 
       {/* ───── Footer ───── */}
       <footer className="mt-auto border-t border-white/[0.06] bg-[#06060a]">
-        <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center">
-                <Zap className="w-3.5 h-3.5 text-white" />
-              </div>
-              <span className="text-base font-bold tracking-tight text-white">
-                Stack<span className="text-zinc-400">Drip</span>
-              </span>
-            </div>
-
-            <div className="flex items-center gap-6">
-              <a
-                href="https://twitter.com/stackdrip"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-sm text-zinc-500 hover:text-white transition-colors"
-              >
-                <Twitter className="w-4 h-4" />
-                <span className="hidden sm:inline">Twitter</span>
-              </a>
-              <a
-                href="https://t.me/stackdrip"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-sm text-zinc-500 hover:text-white transition-colors"
-              >
-                <Send className="w-4 h-4" />
-                <span className="hidden sm:inline">Telegram</span>
-              </a>
-              <a
-                href="#"
-                className="flex items-center gap-1.5 text-sm text-zinc-500 hover:text-white transition-colors"
-              >
-                <BookOpen className="w-4 h-4" />
-                <span className="hidden sm:inline">Documentation</span>
-              </a>
-            </div>
-
-            <p className="text-xs text-zinc-600">
-              Built by StackDrip. &copy; {new Date().getFullYear()}
-            </p>
-          </div>
+        <div className="max-w-6xl mx-auto px-6 py-10 text-center">
+          <p className="text-sm text-zinc-500">
+            &copy; 2026 StackDrip. All rights reserved.
+          </p>
+          <a
+            href="/privacy"
+            className="inline-block mt-2 text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
+          >
+            Privacy Policy
+          </a>
         </div>
       </footer>
     </div>
