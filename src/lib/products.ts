@@ -1,4 +1,4 @@
-import { Bot, Gamepad2, Search, Sparkles, type LucideIcon } from "lucide-react";
+import { AudioLines, Bot, Clapperboard, Gamepad2, Repeat, Search, Sparkles, type LucideIcon } from "lucide-react";
 import { GUMROAD_EBAY_URL } from "@/lib/site";
 
 /**
@@ -126,6 +126,57 @@ export const products: Product[] = [
       linkHover: "group-hover:text-amber-400",
     },
     cta: { label: "View the build" },
+  },
+  {
+    slug: "lyric-sync",
+    name: "Lyric Sync",
+    tagline: "Lyrics timed to the actual vocal",
+    blurb:
+      "Speech recognition plus onset detection that pins every lyric word to the moment it's sung, then renders word-by-word kinetic lyric videos. Built for my own music releases.",
+    status: "example",
+    icon: AudioLines,
+    accent: {
+      card: "hover:border-sky-500/20 hover:bg-sky-500/[0.02]",
+      iconWrap: "bg-sky-500/10 border-sky-500/15 group-hover:bg-sky-500/15",
+      icon: "text-sky-400",
+      tagline: "text-sky-400",
+      linkHover: "group-hover:text-sky-400",
+    },
+    cta: { label: "See it in Creator media", href: "#media" },
+  },
+  {
+    slug: "loop-studio",
+    name: "Loop Studio",
+    tagline: "Seamless VJ, art and ambient loops",
+    blurb:
+      "A Blender and ffmpeg pipeline that renders tempo-locked VJ loops, brings pixel art to life on its own grid, and builds long ambient videos that react to the music.",
+    status: "example",
+    icon: Repeat,
+    accent: {
+      card: "hover:border-pink-500/20 hover:bg-pink-500/[0.02]",
+      iconWrap: "bg-pink-500/10 border-pink-500/15 group-hover:bg-pink-500/15",
+      icon: "text-pink-400",
+      tagline: "text-pink-400",
+      linkHover: "group-hover:text-pink-400",
+    },
+    cta: { label: "See it in Creator media", href: "#media" },
+  },
+  {
+    slug: "video-studio",
+    name: "Founder Delusion Studio",
+    tagline: "Narrated explainers and documentaries",
+    blurb:
+      "My own video studio: script to finished video with AI narration, a presenter character that reacts to cues, live website captures with highlights, and a sourced documentary mode with archive visuals.",
+    status: "example",
+    icon: Clapperboard,
+    accent: {
+      card: "hover:border-violet-500/20 hover:bg-violet-500/[0.02]",
+      iconWrap: "bg-violet-500/10 border-violet-500/15 group-hover:bg-violet-500/15",
+      icon: "text-violet-400",
+      tagline: "text-violet-400",
+      linkHover: "group-hover:text-violet-400",
+    },
+    cta: { label: "See it in Creator media", href: "#media" },
   },
 ];
 

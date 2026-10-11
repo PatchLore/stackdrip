@@ -5,6 +5,7 @@ import { ArrowRight, Zap, Code2, Lightbulb, Hammer, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AmbientGlow } from "@/components/site/AmbientGlow";
 import { ContactCTA } from "@/components/site/ContactCTA";
+import { CreatorMedia } from "@/components/site/CreatorMedia";
 import { products, STATUS_LABEL } from "@/lib/products";
 import { TWITTER_URL } from "@/lib/site";
 
@@ -78,6 +79,9 @@ export default function Home() {
             </a>
             <a href="#work" className="hover:text-white transition-colors">
               Work
+            </a>
+            <a href="#media" className="hover:text-white transition-colors">
+              Media
             </a>
             <a
               href={TWITTER_URL}
@@ -387,6 +391,9 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+
+        {/* ───── Creator media packages ───── */}
+        <CreatorMedia />
 
         {/* ───── Contact ───── */}
         <ContactCTA />
