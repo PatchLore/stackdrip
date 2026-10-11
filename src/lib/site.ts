@@ -36,7 +36,7 @@ export const TELEGRAM_URL = "https://t.me/stackdrip";
 export const FORMSPREE_INTAKE_ID: string | null = "mgawojnp";
 
 /** WhatsApp number, international format, digits only (UK: 44 + number). */
-export const WHATSAPP_NUMBER: string | null = "447375949211";
+export const WHATSAPP_NUMBER: string | null = "447925990923";
 
 /** Click-to-chat URL, or null when no number is configured. */
 export function whatsappUrl(message?: string): string | null {
