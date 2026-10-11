@@ -142,6 +142,7 @@ export const products: Product[] = [
       tagline: "text-sky-400",
       linkHover: "group-hover:text-sky-400",
     },
+    href: "#media",
     cta: { label: "See it in Creator media", href: "#media" },
   },
   {
@@ -159,6 +160,7 @@ export const products: Product[] = [
       tagline: "text-pink-400",
       linkHover: "group-hover:text-pink-400",
     },
+    href: "#media",
     cta: { label: "See it in Creator media", href: "#media" },
   },
   {
@@ -176,6 +178,7 @@ export const products: Product[] = [
       tagline: "text-violet-400",
       linkHover: "group-hover:text-violet-400",
     },
+    href: "#media",
     cta: { label: "See it in Creator media", href: "#media" },
   },
 ];
