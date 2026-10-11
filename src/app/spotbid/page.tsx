@@ -1,13 +1,11 @@
 "use client";
 
-import { useForm, ValidationError } from "@formspree/react";
 import { motion } from "framer-motion";
 import {
   Shield,
   Wallet,
   Star,
   Crown,
-  Clock,
   ArrowRight,
   Zap,
   TrendingUp,
@@ -16,19 +14,17 @@ import {
   DollarSign,
   ChevronRight,
   Twitter,
-  BookOpen,
   Send,
   CheckCircle2,
-  Loader2,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ContactCTA } from "@/components/site/ContactCTA";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] as const },
   }),
 };
 
@@ -149,72 +145,6 @@ function TelegramMockup() {
   );
 }
 
-function BookTestForm({
-  className,
-  buttonSize = "lg",
-}: {
-  className?: string;
-  buttonSize?: "default" | "lg";
-}) {
-  const [state, handleSubmit] = useForm("xqejaqkg");
-
-  if (state.succeeded) {
-    return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="flex items-center gap-2 text-emerald-400 font-medium text-sm sm:text-base"
-      >
-        <CheckCircle2 className="w-5 h-5 shrink-0" />
-        You&apos;re on the list! We&apos;ll be in touch to set up your 48h
-        test. ✔️
-      </motion.div>
-    );
-  }
-
-  return (
-    <form
-      onSubmit={handleSubmit}
-      className={`flex flex-col sm:flex-row items-center gap-3 ${className || ""}`}
-    >
-      <div className="flex flex-col gap-1 w-full sm:w-auto">
-        <input
-          id="test-email"
-          type="email"
-          name="email"
-          placeholder="Enter your email to book a test"
-          required
-          className="w-full sm:w-64 px-4 py-2.5 rounded-xl bg-white/[0.06] border border-white/[0.1] text-white placeholder:text-zinc-500 text-sm focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all"
-        />
-        <ValidationError
-          prefix="Email"
-          field="email"
-          errors={state.errors}
-          className="text-xs text-red-400 pl-1"
-        />
-      </div>
-      <Button
-        type="submit"
-        size={buttonSize}
-        disabled={state.submitting}
-        className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl px-8 h-12 text-base shadow-xl shadow-emerald-500/20 hover:shadow-emerald-400/30 transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60 disabled:hover:scale-100 disabled:cursor-not-allowed w-full sm:w-auto"
-      >
-        {state.submitting ? (
-          <>
-            <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-            Sending…
-          </>
-        ) : (
-          <>
-            Book Free 48h Test
-            <ArrowRight className="w-4 h-4 ml-1" />
-          </>
-        )}
-      </Button>
-    </form>
-  );
-}
-
 export default function SpotBidPage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -239,15 +169,12 @@ export default function SpotBidPage() {
             <a href="#how" className="hover:text-white transition-colors">
               How It Works
             </a>
-            <a href="#revenue" className="hover:text-white transition-colors">
-              Revenue
-            </a>
           </div>
           <a
             href="#cta"
             className="inline-flex items-center gap-1.5 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-lg shadow-lg shadow-emerald-500/20 hover:shadow-emerald-400/30 transition-all px-4 py-2 text-sm"
           >
-            Get Started
+            Get in Touch
             <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </div>
@@ -270,7 +197,7 @@ export default function SpotBidPage() {
                 <motion.div variants={fadeUp} custom={0}>
                   <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/[0.06] text-emerald-400 text-xs font-medium mb-6">
                     <Star className="w-3 h-3" />
-                    Pin-to-Earn for Telegram
+                    Example build
                   </span>
                 </motion.div>
 
@@ -279,9 +206,9 @@ export default function SpotBidPage() {
                   custom={1}
                   className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white"
                 >
-                  Turn Your Telegram Pinned Message Into{" "}
+                  SpotBid —{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-300">
-                    Autopilot Revenue.
+                    Pin-to-Earn for Telegram.
                   </span>
                 </motion.h1>
 
@@ -290,40 +217,11 @@ export default function SpotBidPage() {
                   custom={2}
                   className="mt-6 text-lg text-zinc-400 leading-relaxed max-w-xl mx-auto lg:mx-0"
                 >
-                  SpotBid by StackDrip runs 24/7 auctions for your group&apos;s
-                  top slot. Advertisers bid, you keep 95% of the revenue. Zero
-                  upfront cost.
+                  A Telegram bot I built that runs live auctions for a
+                  group&apos;s pinned message slot. Community owners can turn
+                  their most-viewed piece of real estate into automatic
+                  revenue, without manually negotiating every advertiser.
                 </motion.p>
-
-                <motion.div
-                  variants={fadeUp}
-                  custom={3}
-                  className="mt-8"
-                >
-                  <BookTestForm />
-                  <p className="text-sm text-zinc-500 mt-3 text-center lg:text-left">
-                    No strings attached
-                  </p>
-                </motion.div>
-
-                <motion.div
-                  variants={fadeUp}
-                  custom={4}
-                  className="mt-8 flex items-center gap-6 justify-center lg:justify-start text-xs text-zinc-500"
-                >
-                  <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                    Zero upfront cost
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                    48h free trial
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                    You keep 95%
-                  </span>
-                </motion.div>
               </div>
 
               <motion.div
@@ -375,9 +273,9 @@ export default function SpotBidPage() {
                 custom={2}
                 className="mt-4 text-zinc-400 max-w-2xl mx-auto"
               >
-                We know crypto admins have seen every scam in the book.
-                That&apos;s why SpotBid was designed from the ground up with
-                your security as the top priority.
+                Crypto admins have seen every scam in the book, so I designed
+                SpotBid from the ground up to give a group owner nothing to
+                worry about.
               </motion.p>
             </motion.div>
 
@@ -386,14 +284,14 @@ export default function SpotBidPage() {
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
               variants={stagger}
-              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"
+              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
             >
               {[
                 {
                   icon: Wallet,
                   title: "No Wallet Connects",
                   description:
-                    "We never ask for your private keys or wallet access. Your funds stay in your control at all times — no connect buttons, no approvals, no risk.",
+                    "SpotBid never asks for private keys or wallet access. Funds stay in the group owner's control at all times — no connect buttons, no approvals, no risk.",
                 },
                 {
                   icon: Star,
@@ -405,13 +303,7 @@ export default function SpotBidPage() {
                   icon: Crown,
                   title: "You Keep Control",
                   description:
-                    "You remain the supreme admin. We don't take over your group, modify your settings, or gain any admin privileges beyond pinning sponsored messages.",
-                },
-                {
-                  icon: Clock,
-                  title: "Risk-Free Trial",
-                  description:
-                    "Try it for 48 hours. If it doesn't print money, we remove it instantly. No strings attached, no commitments, no questions asked.",
+                    "The group owner remains the supreme admin. The bot doesn't take over the group, modify settings, or gain any admin privileges beyond pinning sponsored messages.",
                 },
               ].map((item, i) => (
                 <motion.div
@@ -458,9 +350,9 @@ export default function SpotBidPage() {
                 custom={1}
                 className="text-3xl sm:text-4xl font-bold tracking-tight text-white"
               >
-                Live in 30 Seconds.{" "}
+                How{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-300">
-                  Earning Forever.
+                  it works.
                 </span>
               </motion.h2>
             </motion.div>
@@ -494,10 +386,10 @@ export default function SpotBidPage() {
                 {
                   step: "03",
                   icon: DollarSign,
-                  title: "Earn on Autopilot",
+                  title: "Auctions Run Themselves",
                   description:
-                    "Members bid for the pinned slot. The highest bid auto-pins for 24 hours, then the next auction starts. You just watch the 95% revenue roll in, 24/7.",
-                  detail: "95% revenue to you",
+                    "Members bid for the pinned slot. The highest bid auto-pins for 24 hours, then the next auction starts — the whole cycle runs without the owner touching it.",
+                  detail: "Fully automated cycle",
                 },
               ].map((item, i) => (
                 <motion.div
@@ -530,117 +422,6 @@ export default function SpotBidPage() {
           </div>
         </section>
 
-        {/* ───── Revenue Split Section ───── */}
-        <section id="revenue" className="py-20 md:py-28">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/[0.015] to-transparent pointer-events-none" />
-
-          <div className="relative max-w-6xl mx-auto px-6">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-              variants={stagger}
-              className="text-center mb-14"
-            >
-              <motion.span
-                variants={fadeUp}
-                custom={0}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/[0.06] text-emerald-400 text-xs font-medium mb-4"
-              >
-                <DollarSign className="w-3 h-3" />
-                Transparent Split
-              </motion.span>
-              <motion.h2
-                variants={fadeUp}
-                custom={1}
-                className="text-3xl sm:text-4xl font-bold tracking-tight text-white"
-              >
-                You Own the Community,{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-300">
-                  You Keep the Lion&apos;s Share.
-                </span>
-              </motion.h2>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-              variants={stagger}
-              className="max-w-3xl mx-auto"
-            >
-              <motion.div
-                variants={fadeUp}
-                custom={0}
-                className="rounded-2xl border border-white/[0.06] bg-[#0c0c0f] p-8 md:p-12"
-              >
-                <div className="mb-10">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-sm text-zinc-400 w-20">
-                      Your share
-                    </span>
-                    <div className="flex-1 h-12 rounded-xl overflow-hidden bg-[#141418] flex">
-                      <div className="w-[95%] bg-gradient-to-r from-emerald-600 to-emerald-400 flex items-center justify-center rounded-l-xl">
-                        <span className="text-lg font-bold text-black">
-                          95%
-                        </span>
-                      </div>
-                      <div className="w-[5%] bg-zinc-700 flex items-center justify-center rounded-r-xl min-w-[36px]">
-                        <span className="text-[10px] font-bold text-zinc-300">
-                          5%
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="p-6 rounded-xl bg-emerald-500/[0.06] border border-emerald-500/15">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-emerald-500/15 flex items-center justify-center">
-                        <Crown className="w-5 h-5 text-emerald-400" />
-                      </div>
-                      <div>
-                        <p className="text-2xl font-bold text-emerald-400">
-                          95%
-                        </p>
-                        <p className="text-xs text-zinc-500">To You</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-zinc-400 leading-relaxed">
-                      You keep the vast majority of all auction revenue. Every
-                      bid, every cycle — 95 cents of every Star goes directly to
-                      your wallet.
-                    </p>
-                  </div>
-
-                  <div className="p-6 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center">
-                        <Zap className="w-5 h-5 text-zinc-400" />
-                      </div>
-                      <div>
-                        <p className="text-2xl font-bold text-zinc-300">5%</p>
-                        <p className="text-xs text-zinc-500">To StackDrip</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-zinc-400 leading-relaxed">
-                      Our 5% covers server infrastructure, 24/7 uptime
-                      monitoring, automatic auction management, and priority
-                      support. You never pay out of pocket.
-                    </p>
-                  </div>
-                </div>
-
-                <p className="mt-8 text-center text-sm text-zinc-500">
-                  No hidden fees. No monthly charges. You only earn when we
-                  earn.
-                </p>
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
-
         {/* ───── Final CTA Section ───── */}
         <section id="cta" className="py-20 md:py-28">
           <div className="max-w-6xl mx-auto px-6">
@@ -658,22 +439,23 @@ export default function SpotBidPage() {
                 custom={0}
                 className="relative text-3xl sm:text-4xl font-bold tracking-tight text-white"
               >
-                Ready to Monetize Your Community?
+                Want something like this built for your community?
               </motion.h2>
               <motion.p
                 variants={fadeUp}
                 custom={1}
                 className="relative mt-4 text-zinc-400 max-w-xl mx-auto"
               >
-                Start your free 48-hour test today. No credit card, no
-                commitment, no risk. Just revenue.
+                SpotBid was built solo, end to end. If your community has a
+                similar monetization opportunity sitting unused, I can help you
+                build it.
               </motion.p>
               <motion.div
                 variants={fadeUp}
                 custom={2}
                 className="relative mt-8"
               >
-                <BookTestForm />
+                <ContactCTA variant="inline" />
               </motion.div>
             </motion.div>
           </div>
@@ -711,13 +493,6 @@ export default function SpotBidPage() {
               >
                 <Send className="w-4 h-4" />
                 <span className="hidden sm:inline">Telegram</span>
-              </a>
-              <a
-                href="#"
-                className="flex items-center gap-1.5 text-sm text-zinc-500 hover:text-emerald-400 transition-colors"
-              >
-                <BookOpen className="w-4 h-4" />
-                <span className="hidden sm:inline">Documentation</span>
               </a>
             </div>
 

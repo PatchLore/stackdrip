@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,36 +14,41 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "StackDrip — Turn Your Telegram Pinned Message Into Autopilot Revenue",
+  metadataBase: new URL(SITE_URL),
+  title: "StackDrip — Custom tools for creators, built solo",
   description:
-    "SpotBid by StackDrip runs 24/7 auctions for your group's top slot. Advertisers bid, you keep 95% of the revenue. Zero upfront cost.",
+    "I build custom tools for creators and community owners: working software, built fast, funded by the audience that will use it. No dev team required.",
   keywords: [
     "StackDrip",
-    "SpotBid",
-    "Telegram bot",
-    "Telegram monetization",
-    "Pin-to-Earn",
-    "crypto",
-    "community automation",
-    "Telegram Stars",
+    "custom tools for creators",
+    "bespoke software development",
+    "creator tools",
+    "community tools",
+    "solo developer",
+    "indie software studio",
+    "MVP development",
   ],
   authors: [{ name: "StackDrip" }],
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "StackDrip — Autopilot Revenue for Telegram Communities",
+    title: "StackDrip — Custom tools for creators, built solo",
     description:
-      "SpotBid runs 24/7 auctions for your group's pinned slot. You keep 95%.",
+      "I build custom tools for creators and community owners. Tell me what you're building.",
+    // TODO(confirm): canonical host pending confirmation (apex vs www).
     url: "https://www.stackdrip.dev",
     siteName: "StackDrip",
     type: "website",
+    // TODO(wire): add `images: [...]` once a real OG image exists. Without it
+    // the summary_large_image card below renders with no image.
   },
   twitter: {
     card: "summary_large_image",
-    title: "StackDrip — Autopilot Revenue for Telegram Communities",
+    title: "StackDrip — Custom tools for creators, built solo",
     description:
-      "SpotBid runs 24/7 auctions for your group's pinned slot. You keep 95%.",
+      "I build custom tools for creators and community owners. Tell me what you're building.",
+    // TODO(wire): add `images: [...]` alongside the OG image.
   },
 };
 

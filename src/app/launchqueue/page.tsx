@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
   Ban,
@@ -8,16 +8,14 @@ import {
   Unlink,
   Sparkles,
   Rocket,
-  Users,
-  Mail,
   ArrowRight,
-  Check,
-  Quote,
   Twitter,
   Zap,
   Gamepad2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ContactCTA } from "@/components/site/ContactCTA";
+import { TWITTER_URL } from "@/lib/site";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -32,65 +30,16 @@ const staggerContainer = {
   },
 };
 
-function EmailCaptureForm({ className = "" }: { className?: string }) {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setLoading(true);
-    setTimeout(() => {
-      setSubmitted(true);
-      setLoading(false);
-    }, 800);
-  };
-
-  return (
-    <form
-      onSubmit={handleSubmit}
-      className={`flex flex-col sm:flex-row gap-3 w-full max-w-md ${className}`}
-    >
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email for early access"
-        disabled={submitted}
-        className="flex-1 px-4 py-3 bg-[#111118] border border-[#1e1e2e] rounded-lg text-white placeholder:text-zinc-500 focus:outline-none focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all disabled:opacity-50"
-      />
-      <button
-        type="submit"
-        disabled={submitted || loading}
-        className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold rounded-lg hover:from-purple-500 hover:to-blue-400 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap"
-      >
-        {loading ? (
-          <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-        ) : submitted ? (
-          <>
-            <Check className="w-5 h-5" />
-            You&apos;re on the list!
-          </>
-        ) : (
-          <>
-            Join the Waitlist
-            <ArrowRight className="w-4 h-4" />
-          </>
-        )}
-      </button>
-    </form>
-  );
-}
-
 function AnimatedSection({
   children,
   className = "",
   delay = 0,
+  id,
 }: {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  id?: string;
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -98,6 +47,7 @@ function AnimatedSection({
   return (
     <motion.section
       ref={ref}
+      id={id}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={fadeInUp}
@@ -126,8 +76,8 @@ function Navigation() {
           size="sm"
           className="bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-500 hover:to-blue-400 text-white font-semibold rounded-lg transition-all"
         >
-          <a href="#waitlist">
-            Get Early Access
+          <a href="#contact">
+            Get in Touch
             <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </Button>
@@ -150,7 +100,7 @@ function HeroSection() {
         >
           <span className="text-2xl">📱</span>
           <span className="text-sm font-medium text-zinc-400">
-            Finally, pre-launch marketing for mobile
+            Example build
           </span>
         </motion.div>
 
@@ -160,9 +110,9 @@ function HeroSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6"
         >
-          Steam Wishlists for{" "}
+          LaunchQueue —{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
-            Mobile Games
+            Steam Wishlists for Mobile Games
           </span>
         </motion.h1>
 
@@ -172,30 +122,9 @@ function HeroSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto mb-10"
         >
-          Stop sending Google Drive links into the void. Capture player emails,
-          build a waitlist, and launch your mobile game to an actual audience on
-          Day 1.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex justify-center mb-6"
-        >
-          <EmailCaptureForm />
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-sm text-zinc-500 flex items-center justify-center gap-2"
-        >
-          <span className="inline-flex items-center justify-center w-5 h-5 bg-green-500/20 rounded-full">
-            <Users className="w-3 h-3 text-green-400" />
-          </span>
-          Join 50+ indie devs building their launch queue
+          A waitlist tool built for indie game developers, designed to capture
+          player emails before a Steam or App Store launch so there&apos;s an
+          audience ready on day one.
         </motion.p>
 
         <motion.div
@@ -336,55 +265,22 @@ function SolutionSection() {
   );
 }
 
-function TestimonialSection() {
-  return (
-    <AnimatedSection className="py-24 px-6 bg-[#0d0d14]">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="relative p-8 md:p-12 bg-[#111118] border border-white/[0.06] rounded-2xl"
-        >
-          <Quote className="w-12 h-12 text-purple-500/30 absolute top-6 left-6" />
-
-          <blockquote className="text-xl md:text-2xl text-zinc-300 leading-relaxed mb-8 pl-8">
-            &ldquo;I spent 6 months making my game and had 10 downloads on
-            launch day. I wish I had a way to collect the emails of the 500
-            people who upvoted my Reddit post.&rdquo;
-          </blockquote>
-
-          <div className="flex items-center gap-4 pl-8">
-            <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full flex items-center justify-center text-white font-bold">
-              🤕
-            </div>
-            <div>
-              <p className="font-semibold">Frustrated Solo Dev</p>
-              <p className="text-sm text-zinc-500">Indie Mobile Game Developer</p>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </AnimatedSection>
-  );
-}
-
 function FinalCTASection() {
   return (
-    <AnimatedSection className="py-24 px-6 relative overflow-hidden" id="waitlist">
+    <AnimatedSection className="py-24 px-6 relative overflow-hidden" id="contact">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-2xl mx-auto text-center relative z-10">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-          Stop launching to an empty room
+          Building toward a launch of your own?
         </h2>
         <p className="text-lg text-zinc-400 mb-10">
-          Get early access to LaunchQueue and start building your mobile
-          waitlist today.
+          LaunchQueue is one example of what a focused, purpose-built tool for
+          indie devs looks like. If you&apos;re prepping a launch and want
+          something similar, or something else entirely, let&apos;s talk.
         </p>
 
-        <EmailCaptureForm className="justify-center" />
+        <ContactCTA variant="inline" />
       </div>
     </AnimatedSection>
   );
@@ -408,7 +304,7 @@ function Footer() {
         </p>
 
         <a
-          href="https://twitter.com"
+          href={TWITTER_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors"
@@ -429,7 +325,6 @@ export default function LaunchQueuePage() {
         <HeroSection />
         <ProblemSection />
         <SolutionSection />
-        <TestimonialSection />
         <FinalCTASection />
       </main>
       <Footer />

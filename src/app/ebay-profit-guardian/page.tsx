@@ -24,13 +24,14 @@ import {
   Percent,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { GUMROAD_EBAY_URL } from "@/lib/site";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] as const },
   }),
 };
 
@@ -192,8 +193,12 @@ export default function EbayProfitGuardianPage() {
                     size="lg"
                     className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-xl px-8 h-12 text-base shadow-xl shadow-cyan-500/20 hover:shadow-cyan-400/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
                   >
-                    <a href="#">
-                      Install on Chrome
+                    <a
+                      href={GUMROAD_EBAY_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Get Lifetime Access
                       <ArrowRight className="w-4 h-4 ml-1" />
                     </a>
                   </Button>
@@ -318,7 +323,7 @@ export default function EbayProfitGuardianPage() {
                   icon: Shield,
                   title: "No Data Collected",
                   description:
-                    "All calculations happen locally in your browser. Your eBay data never touches our servers. We don't track, store, or share anything.",
+                    "All calculations happen locally in your browser. Your eBay data never leaves your machine — nothing is tracked, stored, or shared.",
                 },
               ].map((item, i) => (
                 <motion.div
@@ -526,8 +531,12 @@ export default function EbayProfitGuardianPage() {
                     size="lg"
                     className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-xl px-10 h-13 text-base shadow-xl shadow-cyan-500/20 hover:shadow-cyan-400/30 transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
                   >
-                    <a href="#">
-                      Install on Chrome
+                    <a
+                      href={GUMROAD_EBAY_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Get Lifetime Access
                       <ArrowRight className="w-4 h-4 ml-1" />
                     </a>
                   </Button>
@@ -574,8 +583,12 @@ export default function EbayProfitGuardianPage() {
                   size="lg"
                   className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-xl px-8 h-12 text-base shadow-xl shadow-cyan-500/20 hover:shadow-cyan-400/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  <a href="#">
-                    Install on Chrome
+                  <a
+                    href={GUMROAD_EBAY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get Lifetime Access
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </a>
                 </Button>
