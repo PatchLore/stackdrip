@@ -39,11 +39,11 @@ const packages = [
   },
   {
     name: "Documentaries & explainers",
-    price: "from £499",
+    price: "from £149",
     video: "/media/documentary-excerpt.mp4",
     pixelated: false,
     description:
-      "Researched, sourced documentaries for YouTube: script with every claim linked to a source, licensed archive visuals, narration and three Shorts cut from each episode.",
+      "Sourced explainers for YouTube: a researched script with every claim linked to a source, licensed archive visuals and narration. Short explainers from £149; full 8–12 minute documentaries from £399, with Shorts cut from each.",
   },
 ];
 
