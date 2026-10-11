@@ -31,7 +31,7 @@ const packages = [
   },
   {
     name: "VJ loop packs",
-    price: "from £149",
+    price: "from £199",
     video: "/media/vj-tunnel.mp4",
     pixelated: false,
     description:
@@ -39,11 +39,11 @@ const packages = [
   },
   {
     name: "Documentaries & explainers",
-    price: "from £149",
+    price: "from £199",
     video: "/media/documentary-excerpt.mp4",
     pixelated: false,
     description:
-      "Sourced explainers for YouTube: a researched script with every claim linked to a source, licensed archive visuals and narration. Short explainers from £149; full 8–12 minute documentaries from £399, with Shorts cut from each.",
+      "Sourced explainers for YouTube: a researched script with every claim linked to a source, licensed archive visuals and narration. Short explainers from £199; full 8–12 minute documentaries from £399, with Shorts cut from each.",
   },
 ];
 
